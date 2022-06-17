@@ -6,24 +6,42 @@
 }
 
 .home-page > div {
-    flex: 1;
-    max-width: 500px;
+    flex: 2;
+    max-width: 1000px;
 }
 
 .home-title {
     text-align: center;
-    margin: 0;
+    margin-top: 70px;
     color: var(--hamblack);
-    font-size: 72px;
-    font-weight: 400;
+    font-size: 128px;
+    font-weight: 700;
     margin-bottom: 16px;
+    letter-spacing: 0.06em;
 }
 
 .home-subtitle {
     text-align: center;
     margin: 0;
     color: var(--hamblack);
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 24px;
+    font-weight: 700;
     margin-bottom: 16px;
+    letter-spacing: 0.06em;
+}
+
+.hamburg-pics {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px 32px;
+}
+
+.hamburglar-icon {
+    display: flex;
+    position:relative;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }

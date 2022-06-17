@@ -11,11 +11,12 @@
 }
 
 body {
-	margin: 0;
-	font-family: "Roboto Mono", monospace;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	background: var(--mayo);
-	background: -webkit-linear-gradient(to right, var(--mayo), #f2edde);
-	background: linear-gradient(to right, var(--mayo), #f2edde);
+  margin: 0;
+  font-family: 'DIN Condensed', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--mayo);  
+  background: -webkit-linear-gradient(to right, var(--mayo), #f2edde);  
+  background: linear-gradient(to right, var(--mayo), #f2edde);  
+  
 }

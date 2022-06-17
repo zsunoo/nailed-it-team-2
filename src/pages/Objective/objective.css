@@ -8,7 +8,7 @@
 
 .objective-page > div {
     flex: 1;
-    max-width: 500px;
+    max-width: 1000px;
 }
 
 .objective-page > div:first-of-type {
@@ -18,18 +18,30 @@
 
 .objective-title {
     text-align: center;
-    margin: 0;
+    margin-top: 70px;
     color: var(--hamblack);
-    font-size: 72px;
-    font-weight: 400;
+    font-size: 128px;
+    font-weight: 700;
     margin-bottom: 16px;
+    letter-spacing: 0.06em;
 }
 
 .objective-subtitle {
     text-align: center;
-    margin: 0;
+    margin: 29px;
     color: var(--hamblack);
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 24px;
+    font-weight: 700;
     margin-bottom: 16px;
+    letter-spacing: 0.06em;
+}
+
+.tie {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iNeedSpace {
+    padding-bottom:100px;
 }
