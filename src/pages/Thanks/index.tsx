@@ -3,6 +3,7 @@ import Lottie from "react-lottie";
 import Thanks from "../../lotties/thanks.json";
 import Erin from "../../assets/erin_kovar.jpeg";
 import Kyle from "../../assets/kyle_ahlstrom.jpg";
+import Halfsies from "../../assets/burgler_full.svg";
 
 import "./thanks.css";
 
@@ -15,7 +16,10 @@ function ThanksPage() {
 
   return (
     <div className="thanks-page">
-      <Lottie options={defaultOptions} height={300} width={400} />
+      <img src={Halfsies} alt="Halfsies" className="halfsies" />
+      <div className="heart-wrapper">
+        <Lottie options={defaultOptions} height={300} width={400} />
+      </div>
       <div>
         <h1 className="thanks-title">Thank You</h1>
         <p className="thanks-subtitle">

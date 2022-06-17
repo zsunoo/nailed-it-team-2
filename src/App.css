@@ -165,3 +165,13 @@ footer > p {
 .find-me.bottom-bun.hide {
   display: none;
 }
+
+img.halfsies {
+  margin-top: -20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.heart-wrapper {
+  margin-top: -50px;
+}
