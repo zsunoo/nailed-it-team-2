@@ -1,13 +1,15 @@
 /* Flashlight Overlay */
-/* :root {
-	cursor: none;
+:root {
+	--cursor: initial;
+	cursor: var(--cursor);
 	--cursorX: 50vw;
 	--cursorY: 50vh;
+	--display: none;
 }
 
 :root:before {
 	content: "";
-	display: block;
+	display: var(--display);
 	width: 100%;
 	z-index: 1;
 	height: 100%;
@@ -19,4 +21,4 @@
 		rgba(0, 0, 0, 0.5) 80%,
 		rgba(0, 0, 0, 0.95) 100%
 	);
-} */
+}

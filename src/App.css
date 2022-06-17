@@ -1,37 +1,81 @@
 .app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 .app-content {
-  flex: 1;
-  padding: 16px;
+	flex: 1;
+	padding: 16px;
 }
 
-.app-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 64px;
-  width: 100%;
+.nav-item > a {
+	font-size: 20px;
+	text-decoration: none;
 }
 
-.app-nav > a {
-  color: var(--hamblack);
-  font-size: 20px;
-  text-decoration: none;
+#nav-app.navbar {
+	height: auto;
+}
+
+#nav-app.navbar > .container-fluid {
+	height: 100%;
+}
+
+#nav-app.navbar .navbar-toggler {
+	background: transparent;
+	outline: 0;
+	border: 1px dashed transparent;
+	cursor: pointer;
+	height: 60px;
+	width: 60px;
+	display: flex;
+	background: var(--ketchup);
+	border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+	padding: 16px;
+	transition: 0.25s all ease-in-out;
+}
+
+#nav-app.navbar.navbar .navbar-toggler.empty {
+	background: white;
+	border: 1px dashed var(--hamblack);
+}
+
+#nav-app.navbar .navbar-toggler svg {
+	display: flex;
+	max-width: 64px;
+}
+
+.navbar-toggler:focus {
+	box-shadow: none;
 }
 
 footer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  border-top: 1px solid var(--hamblack);
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	border-top: 1px solid rgba(255, 255, 255, 0.382);
 }
 
 footer > p {
-  color: var(--hamblack);
+	color: white;
 }
 
+.find-me{
+	background: transparent;
+	outline: 0;
+	border: 0;
+	height: 60px;
+	width: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 16px;
+}
 
+.find-me svg {
+	display: flex;
+	max-width: 64px;
+}
