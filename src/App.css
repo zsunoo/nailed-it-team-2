@@ -79,3 +79,49 @@ footer > p {
 	display: flex;
 	max-width: 64px;
 }
+
+.overlay {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.find-me.top-bun {
+  position: absolute;
+  top: 24%;
+  left: 24%;
+}
+
+.find-me.patty {
+  position: absolute;
+  top: 48%;
+  left: 18%;
+}
+
+.find-me.cheese {
+  position: absolute;
+  bottom: 14%;
+  left: 67%;
+}
+
+.find-me.lettuce {
+  position: absolute;
+  top: 4%;
+  left: 12%;
+}
+
+.find-me.bottom-bun {
+  position: absolute;
+  top: 89%;
+  left: 13%;
+}
