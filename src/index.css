@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+:root {
+  --hamblack: #1A1A1A;
+  --ketchup: #D7582B;
+  --mayo: #F5F3EC;
+  --cheese: #FC9D2C;
+  --gray: #B5B5B5;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #457fca;  
-  background: -webkit-linear-gradient(to right, #5691c8, #457fca);  
-  background: linear-gradient(to right, #5691c8, #457fca); 
+  background: var(--mayo);  
+  background: -webkit-linear-gradient(to right, var(--mayo), #f2edde);  
+  background: linear-gradient(to right, var(--mayo), #f2edde);  
   
 }
-

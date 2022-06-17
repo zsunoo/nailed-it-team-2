@@ -13,7 +13,7 @@
 .teams-title {
     text-align: center;
     margin: 0;
-    color: white;
+    color: var(--hamblack);
     font-size: 72px;
     font-weight: 400;
 }
@@ -22,7 +22,7 @@
 .team-name {
     text-align: center;
     margin: 0;
-    color: #00377e;  
+    color: var(--ketchup);  
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 8px;
@@ -40,14 +40,14 @@
     flex: 0 1 210px;
     margin: 16px;
     padding: 16px;
-    border: 1px solid white;
+    border: 1px solid var(--hamblack);
     border-radius: 12px;
     min-width: 100px;
     box-shadow:rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .team-card li, ul {
-    color: white;
+    color: var(--hamblack);
     margin: 0;
     font-size: 14px;;
 }

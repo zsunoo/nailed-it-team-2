@@ -13,7 +13,7 @@
 .home-title {
     text-align: center;
     margin: 0;
-    color: white;
+    color: var(--hamblack);
     font-size: 72px;
     font-weight: 400;
     margin-bottom: 16px;
@@ -22,7 +22,7 @@
 .home-subtitle {
     text-align: center;
     margin: 0;
-    color: white;
+    color: var(--hamblack);
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 16px;

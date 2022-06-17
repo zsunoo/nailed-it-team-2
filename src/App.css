@@ -18,7 +18,7 @@
 }
 
 .app-nav > a {
-  color: white;
+  color: var(--hamblack);
   font-size: 20px;
   text-decoration: none;
 }
@@ -27,11 +27,11 @@ footer {
   width: 100%;
   display: flex;
   justify-content: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.382);
+  border-top: 1px solid var(--hamblack);
 }
 
 footer > p {
-  color: white;
+  color: var(--hamblack);
 }
 
 

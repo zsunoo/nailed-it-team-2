@@ -14,7 +14,7 @@
 .thanks-title {
     text-align: center;
     margin: 0;
-    color: white;
+    color: var(--hamblack);
     font-size: 72px;
     font-weight: 400;
     margin-bottom: 16px;
@@ -23,7 +23,7 @@
 .thanks-subtitle {
     text-align: center;
     margin: 0;
-    color: white;
+    color: var(--hamblack);
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 16px;
@@ -44,7 +44,7 @@
     border-radius: 50%;
     overflow:hidden;
     margin: 16px 32px;
-    border: 1px solid white;
+    border: 1px solid var(--hamblack);
     box-shadow:rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -56,7 +56,7 @@
 .thanks-name {
     text-align: center;
     margin: 0;
-    color: white;  
+    color: var(--hamblack);  
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 16px;
