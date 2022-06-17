@@ -20,6 +20,7 @@
 
 #nav-app.navbar > .container-fluid {
 	height: 100%;
+  position: relative;
 }
 
 #nav-app.navbar .navbar-toggler {
@@ -38,6 +39,10 @@
 	transition: 0.25s all ease-in-out;
 }
 
+#nav-app.navbar-toggler:focus {
+	box-shadow: none;
+}
+
 #nav-app.navbar.navbar .navbar-toggler.empty {
 	background: white;
 	border: 1px dashed var(--hamblack);
@@ -48,9 +53,25 @@
 	max-width: 64px;
 }
 
-.navbar-toggler:focus {
-	box-shadow: none;
+.nav-list {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  z-index: 1;
+  transition: .3s transform ease, .5s opacity ease;
+  transform: translateY(0);
+  background: rgba(var(--bs-light-rgb),var(--bs-bg-opacity))!important;
+  pointer-events: none;
 }
+
+.nav-list.active {
+  transform: translateY(100%);
+  opacity: 1;
+  pointer-events: auto;
+}
+
 
 footer {
 	width: 100%;
@@ -63,7 +84,7 @@ footer > p {
 	color: white;
 }
 
-.find-me{
+.find-me {
 	background: transparent;
 	outline: 0;
 	border: 0;
@@ -82,7 +103,7 @@ footer > p {
 
 .overlay {
   position: fixed;
-  z-index: 100;
+  z-index: 0;
   top: 0;
   right: 0;
   width: 100%;
@@ -101,11 +122,18 @@ footer > p {
   top: 24%;
   left: 24%;
 }
+.find-me.top-bun.hide {
+  display: none;
+}
 
 .find-me.patty {
   position: absolute;
   top: 48%;
   left: 18%;
+}
+
+.find-me.patty.hide {
+  display: none;
 }
 
 .find-me.cheese {
@@ -114,14 +142,26 @@ footer > p {
   left: 67%;
 }
 
+.find-me.cheese.hide {
+  display: none;
+}
+
 .find-me.lettuce {
   position: absolute;
   top: 4%;
   left: 12%;
 }
 
+.find-me.lettuce.hide {
+  display: none;
+}
+
 .find-me.bottom-bun {
   position: absolute;
   top: 89%;
   left: 13%;
+}
+
+.find-me.bottom-bun.hide{
+  display: none;
 }

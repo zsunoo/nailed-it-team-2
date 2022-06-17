@@ -12,6 +12,8 @@ import { useState, useEffect } from "react";
 
 function App() {
 	const [toggleFlashlight, setToggleFlashlight] = useState(false);
+  const [showNav, setShowNav] = useState(false);
+  const [overlayActive, setOverlayActive] = useState(false);
 
 	const update = (e: any) => {
 		var x = e.clientX || e.touches[0].clientX;
@@ -56,20 +58,19 @@ function App() {
 	const [burgerBuild, setBurgerBuild] = useState({
 		...initialState,
 	});
+
 	const handleTopBunClick = () => setBurgerBuild((b) => ({ ...b, topBun: false }));
 	const handleCheeseClick = () => setBurgerBuild((b) => ({ ...b, cheese: false }));
 	const handlePattyClick = () => setBurgerBuild((b) => ({ ...b, patty: false }));
 	const handleLettuceClick = () => setBurgerBuild((b) => ({ ...b, lettuce: false }));
 	const handleBottomBunClick = () => setBurgerBuild((b) => ({ ...b, bottomBun: false }));
 
-  // const handleReset = () => setBurgerBuild(initialState)
-  const [overlayActive, setOverlayActive] = useState(false);
-
   useEffect(() => {
     if(Object.values(burgerBuild).every(item => item)) {
-      // add logic here ?
+      console.log('complete!');
+      setToggleFlashlight(false);
     }
-  }, [burgerBuild])
+  }, [burgerBuild, overlayActive])
 
   return (
     <div className="app">
@@ -78,16 +79,11 @@ function App() {
           <button
             className="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#hamburgerToggle"
-            aria-controls="hamburgerToggle"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
             onClick={handleFlashlight}
           >
             <Hamburger {...burgerBuild}/>
           </button>
-          <div className="collapse navbar-collapse" id={"hamburgerToggle"}>
+          <div className={`nav-list ${showNav ? 'active':''}`} id="hamburgerToggle">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link to="/">Home</Link>
@@ -109,19 +105,19 @@ function App() {
         <Outlet />
       </div>
       <div className={`overlay ${overlayActive ? 'active':''}`}>
-        <button className={`find-me top-bun`} onClick={handleTopBunClick}>
+        <button className={`find-me top-bun ${burgerBuild.topBun ? '':'hide'}`} onClick={handleTopBunClick}>
           <TopBun />
         </button>
-        <button className={`find-me patty`} onClick={handlePattyClick}>
+        <button className={`find-me patty ${burgerBuild.patty ? '': 'hide'}`} onClick={handlePattyClick}>
           <Patty />
         </button>
-        <button className={`find-me cheese`} onClick={handleCheeseClick}>
+        <button className={`find-me cheese ${burgerBuild.cheese ? '': 'hide'}`} onClick={handleCheeseClick}>
           <Cheese />
         </button>
-        <button className={`find-me lettuce`} onClick={handleLettuceClick}>
+        <button className={`find-me lettuce ${burgerBuild.lettuce ? '': 'hide'}`} onClick={handleLettuceClick}>
           <Lettuce />
         </button>
-        <button className={`find-me bottom-bun`} onClick={handleBottomBunClick}>
+        <button className={`find-me bottom-bun ${burgerBuild.bottomBun ? '': 'hide'}`} onClick={handleBottomBunClick}>
           <BottomBun />
         </button>
       </div>
