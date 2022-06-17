@@ -24,9 +24,6 @@ function App() {
 			<div className="app-content">
 				<Outlet />
 			</div>
-			<footer>
-				<p>Credera ♥️ XD</p>
-			</footer>
 		</div>
 	);
 }
