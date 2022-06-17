@@ -7,16 +7,28 @@ import { useState } from "react";
 
 function App() {
 	const [toggleFlashlight, setToggleFlashlight] = useState(false);
+	const [bounds, setBounds] = useState({
+		x: document.documentElement.scrollWidth,
+		y: document.documentElement.scrollHeight,
+	});
 
-	const update = (e: any) => {
+	const updateBounds = (e: any) => {
+		let y = document.documentElement.scrollHeight;
+		let x = document.documentElement.scrollWidth;
+		setBounds({ x, y });
+		console.log(bounds);
+	};
+	useEvent("resize", updateBounds);
+
+	const updateCursor = (e: any) => {
 		var x = e.clientX || e.touches[0].clientX;
 		var y = e.clientY || e.touches[0].clientY;
 
 		document.documentElement.style.setProperty("--cursorX", x + "px");
 		document.documentElement.style.setProperty("--cursorY", y + "px");
 	};
-	useEvent("mousemove", update);
-	useEvent("touchmove", update);
+	useEvent("mousemove", updateCursor);
+	useEvent("touchmove", updateCursor);
 
 	const handleFlashlight = () => {
 		setToggleFlashlight(!toggleFlashlight);
