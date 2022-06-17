@@ -20,6 +20,7 @@ function App() {
 	const handleFlashlight = () => {
 		setToggleFlashlight(!toggleFlashlight);
 		document.documentElement.style.setProperty("--display", toggleFlashlight ? "none" : "block");
+		document.documentElement.style.setProperty("--cursor", toggleFlashlight ? "initial" : "none");
 	};
 
 	return (

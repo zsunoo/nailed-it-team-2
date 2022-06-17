@@ -1,6 +1,7 @@
 /* Flashlight Overlay */
 :root {
-	cursor: none;
+	--cursor: initial;
+	cursor: var(--cursor);
 	--cursorX: 50vw;
 	--cursorY: 50vh;
 	--display: none;
