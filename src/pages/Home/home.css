@@ -39,7 +39,7 @@
 
 .hamburglar-icon {
     display: flex;
-    position:fixed;
+    position:relative;
     bottom: 0;
     align-items: center;
     justify-content: center;

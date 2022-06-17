@@ -101,9 +101,6 @@ function App() {
       <div className="app-content">
         <Outlet />
       </div>
-      <footer>
-        <p>Credera ♥️ XD</p>
-      </footer>
       <div className="overlay">
         <button className="find-me" onClick={handleTopBunClick}>
           <TopBun />

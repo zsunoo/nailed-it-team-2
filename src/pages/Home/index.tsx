@@ -2,7 +2,7 @@ import React from "react";
 import Lottie from "react-lottie";
 import Devs from "../../lotties/developers.json";
 import "./home.css";
-import Hammy from "../../assets/THEHAM.svg";
+import Hammy from "../../assets/HamburglerGraphic_Full.svg";
 import Ham1 from "../../assets/ham1.svg";
 import Ham2 from "../../assets/ham2.svg";
 import Ham3 from "../../assets/ham3.svg";
