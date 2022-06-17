@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/nailed-it/static/css/main.24c32abc.css",
+    "main.js": "/nailed-it/static/js/main.fc1a859f.js",
+    "index.html": "/nailed-it/index.html",
+    "main.24c32abc.css.map": "/nailed-it/static/css/main.24c32abc.css.map",
+    "main.fc1a859f.js.map": "/nailed-it/static/js/main.fc1a859f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.24c32abc.css",
+    "static/js/main.fc1a859f.js"
+  ]
+}
