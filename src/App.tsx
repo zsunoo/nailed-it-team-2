@@ -4,24 +4,24 @@ import { Outlet } from "react-router-dom";
 import Hamburger from "./hamburger";
 import TopBun from "./top-bun";
 import BottomBun from "./bottom-bun";
-import Cheese from './cheese';
+import Cheese from "./cheese";
 import Patty from "./patty";
-import Lettuce from './lettuce'
+import Lettuce from "./lettuce";
 import useEvent from "./useEvent";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [toggleFlashlight, setToggleFlashlight] = useState(false);
+	const [toggleFlashlight, setToggleFlashlight] = useState(false);
 
-  const update = (e: any) => {
-    var x = e.clientX || e.touches[0].clientX;
-    var y = e.clientY || e.touches[0].clientY;
+	const update = (e: any) => {
+		var x = e.clientX || e.touches[0].clientX;
+		var y = e.clientY || e.touches[0].clientY;
 
-    document.documentElement.style.setProperty("--cursorX", x + "px");
-    document.documentElement.style.setProperty("--cursorY", y + "px");
-  };
-  useEvent("mousemove", update);
-  useEvent("touchmove", update);
+		document.documentElement.style.setProperty("--cursorX", x + "px");
+		document.documentElement.style.setProperty("--cursorY", y + "px");
+	};
+	useEvent("mousemove", update);
+	useEvent("touchmove", update);
 
   const handleFlashlight = () => {
     setToggleFlashlight(!toggleFlashlight);
@@ -33,6 +33,7 @@ function App() {
       "--cursor",
       toggleFlashlight ? "initial" : "none"
     );
+
     const invert= {
       topBun: true,
       cheese: true,
@@ -44,23 +45,22 @@ function App() {
     setOverlayActive(true);
   };
 
-  const initialState = {
-    topBun: false,
-    cheese: false,
-    patty: false,
-    lettuce: false,
-    bottomBun: false
-  }
+	const initialState = {
+		topBun: false,
+		cheese: false,
+		patty: false,
+		lettuce: false,
+		bottomBun: false,
+	};
 
-  const [burgerBuild, setBurgerBuild] = useState({
-    ...initialState
-  });
-  const handleTopBunClick = () => setBurgerBuild(b => ({...b, topBun: false }))
-  const handleCheeseClick = () => setBurgerBuild(b => ({...b, cheese: false }))
-  const handlePattyClick = () => setBurgerBuild(b => ({...b, patty: false }));
-  const handleLettuceClick = () => setBurgerBuild(b => ({...b, lettuce: false }))
-  const handleBottomBunClick = () =>  setBurgerBuild(b => ({...b, bottomBun: false }))
-
+	const [burgerBuild, setBurgerBuild] = useState({
+		...initialState,
+	});
+	const handleTopBunClick = () => setBurgerBuild((b) => ({ ...b, topBun: false }));
+	const handleCheeseClick = () => setBurgerBuild((b) => ({ ...b, cheese: false }));
+	const handlePattyClick = () => setBurgerBuild((b) => ({ ...b, patty: false }));
+	const handleLettuceClick = () => setBurgerBuild((b) => ({ ...b, lettuce: false }));
+	const handleBottomBunClick = () => setBurgerBuild((b) => ({ ...b, bottomBun: false }));
 
   // const handleReset = () => setBurgerBuild(initialState)
   const [overlayActive, setOverlayActive] = useState(false);
