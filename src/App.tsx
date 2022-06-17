@@ -35,6 +35,35 @@ function App() {
     );
   };
 
+  const initialState = {
+    topBun: false,
+    cheese: false,
+    patty: false,
+    lettuce: false,
+    bottomBun: false
+  }
+
+  const [burgerBuild, setBurgerBuild] = useState({
+    ...initialState
+  });
+  const handleTopBunClick = () => setBurgerBuild(b => ({...b, topBun: false }))
+  const handleCheeseClick = () => setBurgerBuild(b => ({...b, cheese: false }))
+  const handlePattyClick = () => setBurgerBuild(b => ({...b, patty: false }));
+  const handleLettuceClick = () => setBurgerBuild(b => ({...b, lettuce: false }))
+  const handleBottomBunClick = () =>  setBurgerBuild(b => ({...b, bottomBun: false }))
+
+  const handleStart = () =>{
+    const invert= {
+      topBun: true,
+      cheese: true,
+      patty: true,
+      lettuce: true,
+      bottomBun:true 
+    }
+    setBurgerBuild(invert);
+  } 
+  const handleReset = () => setBurgerBuild(initialState)
+
   return (
     <div className="app">
       <nav id="nav-app" className="navbar bg-light">
@@ -49,7 +78,7 @@ function App() {
             aria-label="Toggle navigation"
             onClick={handleFlashlight}
           >
-            <Hamburger />
+            <Hamburger {...burgerBuild}/>
           </button>
           <div className="collapse navbar-collapse" id={"hamburgerToggle"}>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -76,20 +105,26 @@ function App() {
         <p>Credera ♥️ XD</p>
       </footer>
       <div className="overlay">
-        <button className="find-me">
+        <button className="find-me" onClick={handleTopBunClick}>
           <TopBun />
         </button>
-        <button className="find-me">
+        <button className="find-me" onClick={handlePattyClick}>
           <Patty />
         </button>
-        <button className="find-me">
+        <button className="find-me" onClick={handleCheeseClick}>
           <Cheese />
         </button>
-        <button className="find-me">
+        <button className="find-me" onClick={handleLettuceClick}>
           <Lettuce />
         </button>
-        <button className="find-me">
+        <button className="find-me" onClick={handleBottomBunClick}>
           <BottomBun />
+        </button>
+        <button className="find-me" onClick={handleReset}>
+          Reset!
+        </button>
+        <button className="find-me" onClick={handleStart}>
+          Start
         </button>
       </div>
     </div>
