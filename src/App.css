@@ -37,6 +37,11 @@
 	padding: 16px;
 }
 
+#nav-app.navbar.navbar .navbar-toggler.empty {
+	background: white;
+	border: 1px dashed var(--hamblack);
+}
+
 #nav-app.navbar .navbar-toggler svg {
 	display: flex;
 	max-width: 64px;

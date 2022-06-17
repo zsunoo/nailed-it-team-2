@@ -11,6 +11,7 @@ function App() {
 		x: document.documentElement.scrollWidth,
 		y: document.documentElement.scrollHeight,
 	});
+	const [isEmpty, setIsEmtpy] = useState(false);
 
 	const updateBounds = (e: any) => {
 		let y = document.documentElement.scrollHeight;
@@ -32,6 +33,7 @@ function App() {
 
 	const handleFlashlight = () => {
 		setToggleFlashlight(!toggleFlashlight);
+		setIsEmtpy(!isEmpty);
 		document.documentElement.style.setProperty("--display", toggleFlashlight ? "none" : "block");
 		document.documentElement.style.setProperty("--cursor", toggleFlashlight ? "initial" : "none");
 	};
@@ -41,7 +43,7 @@ function App() {
 			<nav id="nav-app" className="navbar bg-light">
 				<div className="container">
 					<button
-						className="navbar-toggler"
+						className={`navbar-toggler ${isEmpty ? "empty" : ""}`}
 						type="button"
 						data-bs-toggle="collapse"
 						data-bs-target="#hamburgerToggle"
