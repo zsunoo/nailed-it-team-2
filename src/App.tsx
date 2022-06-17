@@ -4,24 +4,24 @@ import { Outlet } from "react-router-dom";
 import Hamburger from "./hamburger";
 import TopBun from "./top-bun";
 import BottomBun from "./bottom-bun";
-import Cheese from './cheese';
+import Cheese from "./cheese";
 import Patty from "./patty";
-import Lettuce from './lettuce'
+import Lettuce from "./lettuce";
 import useEvent from "./useEvent";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [toggleFlashlight, setToggleFlashlight] = useState(false);
+	const [toggleFlashlight, setToggleFlashlight] = useState(false);
 
-  const update = (e: any) => {
-    var x = e.clientX || e.touches[0].clientX;
-    var y = e.clientY || e.touches[0].clientY;
+	const update = (e: any) => {
+		var x = e.clientX || e.touches[0].clientX;
+		var y = e.clientY || e.touches[0].clientY;
 
-    document.documentElement.style.setProperty("--cursorX", x + "px");
-    document.documentElement.style.setProperty("--cursorY", y + "px");
-  };
-  useEvent("mousemove", update);
-  useEvent("touchmove", update);
+		document.documentElement.style.setProperty("--cursorX", x + "px");
+		document.documentElement.style.setProperty("--cursorY", y + "px");
+	};
+	useEvent("mousemove", update);
+	useEvent("touchmove", update);
 
   const handleFlashlight = () => {
     setToggleFlashlight(!toggleFlashlight);
@@ -33,26 +33,7 @@ function App() {
       "--cursor",
       toggleFlashlight ? "initial" : "none"
     );
-  };
 
-  const initialState = {
-    topBun: false,
-    cheese: false,
-    patty: false,
-    lettuce: false,
-    bottomBun: false
-  }
-
-  const [burgerBuild, setBurgerBuild] = useState({
-    ...initialState
-  });
-  const handleTopBunClick = () => setBurgerBuild(b => ({...b, topBun: false }))
-  const handleCheeseClick = () => setBurgerBuild(b => ({...b, cheese: false }))
-  const handlePattyClick = () => setBurgerBuild(b => ({...b, patty: false }));
-  const handleLettuceClick = () => setBurgerBuild(b => ({...b, lettuce: false }))
-  const handleBottomBunClick = () =>  setBurgerBuild(b => ({...b, bottomBun: false }))
-
-  const handleStart = () =>{
     const invert= {
       topBun: true,
       cheese: true,
@@ -61,8 +42,34 @@ function App() {
       bottomBun:true 
     }
     setBurgerBuild(invert);
-  } 
-  const handleReset = () => setBurgerBuild(initialState)
+    setOverlayActive(true);
+  };
+
+	const initialState = {
+		topBun: false,
+		cheese: false,
+		patty: false,
+		lettuce: false,
+		bottomBun: false,
+	};
+
+	const [burgerBuild, setBurgerBuild] = useState({
+		...initialState,
+	});
+	const handleTopBunClick = () => setBurgerBuild((b) => ({ ...b, topBun: false }));
+	const handleCheeseClick = () => setBurgerBuild((b) => ({ ...b, cheese: false }));
+	const handlePattyClick = () => setBurgerBuild((b) => ({ ...b, patty: false }));
+	const handleLettuceClick = () => setBurgerBuild((b) => ({ ...b, lettuce: false }));
+	const handleBottomBunClick = () => setBurgerBuild((b) => ({ ...b, bottomBun: false }));
+
+  // const handleReset = () => setBurgerBuild(initialState)
+  const [overlayActive, setOverlayActive] = useState(false);
+
+  useEffect(() => {
+    if(Object.values(burgerBuild).every(item => item)) {
+      // add logic here ?
+    }
+  }, [burgerBuild])
 
   return (
     <div className="app">
@@ -101,27 +108,21 @@ function App() {
       <div className="app-content">
         <Outlet />
       </div>
-      <div className="overlay">
-        <button className="find-me" onClick={handleTopBunClick}>
+      <div className={`overlay ${overlayActive ? 'active':''}`}>
+        <button className={`find-me top-bun`} onClick={handleTopBunClick}>
           <TopBun />
         </button>
-        <button className="find-me" onClick={handlePattyClick}>
+        <button className={`find-me patty`} onClick={handlePattyClick}>
           <Patty />
         </button>
-        <button className="find-me" onClick={handleCheeseClick}>
+        <button className={`find-me cheese`} onClick={handleCheeseClick}>
           <Cheese />
         </button>
-        <button className="find-me" onClick={handleLettuceClick}>
+        <button className={`find-me lettuce`} onClick={handleLettuceClick}>
           <Lettuce />
         </button>
-        <button className="find-me" onClick={handleBottomBunClick}>
+        <button className={`find-me bottom-bun`} onClick={handleBottomBunClick}>
           <BottomBun />
-        </button>
-        <button className="find-me" onClick={handleReset}>
-          Reset!
-        </button>
-        <button className="find-me" onClick={handleStart}>
-          Start
         </button>
       </div>
     </div>
