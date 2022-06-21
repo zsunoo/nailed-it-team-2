@@ -1,15 +1,7 @@
 import React from "react";
-import Lottie from "react-lottie";
-import Teams from "../../lotties/teams.json";
 import "./teams.css";
 
 function TeamsPage() {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: Teams,
-  };
-
   const teams: Array<Array<string>> = [
     ["Mark DeArmond", "Zigmund Sun Oo", "Mihiran Pandey", "Chris Watkins"],
   ];

@@ -1,21 +1,13 @@
 import React from "react";
-import Lottie from "react-lottie";
-import Navigate from "../../lotties/navigate.json";
 import "./objective.css";
 import Tie from "../../assets/TieGraphic.svg";
 
 function ObjectivePage() {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: Navigate,
-  };
-
   return (
     <div className="objective-page">
       <div>
         <div className="tie">
-          <img src={Tie}></img>
+          <img src={Tie} alt="Tie"></img>
         </div>
         <h1 className="objective-title">OBJECTIVE</h1>
         <p className="objective-subtitle">
@@ -30,7 +22,7 @@ function ObjectivePage() {
           practices to the extreme!
         </p>
       </div>
-    <div className="iNeedSpace"></div>
+      <div className="iNeedSpace"></div>
     </div>
   );
 }
